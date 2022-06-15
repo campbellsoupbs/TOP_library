@@ -128,6 +128,7 @@ p {
     border-radius: 70px;
     border-style: none;
     font-size: 20px;
+    background-color: var(--cornsilk);
 }
 
 
