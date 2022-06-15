@@ -73,14 +73,6 @@ function logInfo(e){
 };
 
 
-// Removes object with specific count
-//change count === 1 to a variable
-for (var i = 0; i < myLibrary.length; i++) { 
-    if (myLibrary[i].count === 1) {
-        myLibrary.splice(i, 1);
-    }
-}; 
-
 
 // Creates new cards 
 
@@ -113,9 +105,10 @@ function createCard(book){
     div.appendChild(delete_btn);
 
 
-    grid.appendChild(div);
+    grid.appendChild(div);     
 
-    read_btn.addEventListener('click', toggleRead);
+    read_btn.addEventListener('click', toggleRead); //These event listeners are here bc card must be created 1st
+    delete_btn.addEventListener('click', deleteBook);
 }
 
 
@@ -137,10 +130,11 @@ function toggleRead(e) {
         e.target.classList.add("yes");
         changeReadYes(index);
     }
-    
+   
+    console.log(myLibrary); 
 }
 
-// Changes isRead value in Book Objects
+        // Changes isRead value in Book Objects
 function changeReadNo(index) {
     for (var i = 0; i < myLibrary.length; i++) { 
         if (i == index) {
@@ -155,4 +149,32 @@ function changeReadYes(index) {
             myLibrary[i].isRead = "yes";
         }
     }; 
+}
+
+
+
+
+// Delete Button = remove from cards and myLibrary Array
+
+const delete_btn = document.querySelector(".delete_btn");
+
+function deleteBook(e) {
+    const cardDiv = e.target.closest("div");
+    let number = Array.from(cardDiv.classList)[1];
+    let index = Number(number);
+    removeBook(index);                              //Removes Book from myLibrary array
+
+    const grid = document.querySelector(".grid");
+    grid.removeChild(cardDiv);                      //Removes card from page
+
+    console.log(myLibrary);
+}
+
+
+function removeBook(index) {
+    for (var i = 0; i < myLibrary.length; i++) { 
+        if (myLibrary[i].count === index) {
+            myLibrary.splice(i, 1);
+        }
+    };
 }
