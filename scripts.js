@@ -1,3 +1,5 @@
+// Modal
+
 const addModal = document.querySelector('.add_book');
 const modal = document.querySelector('.modal');
 const submit = document.querySelector('.submit');
