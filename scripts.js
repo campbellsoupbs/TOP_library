@@ -119,16 +119,40 @@ function createCard(book){
 }
 
 
-// Toggle isRead
+// Toggle isRead value in Book object + read button appearance
 
 const read_btn = document.querySelector(".read_btn");
 
 
 function toggleRead(e) {
+    const cardDiv = e.target.closest("div");
+    let number = Array.from(cardDiv.classList)[1];
+    let index = Number(number) - 1;
+    console.log(cardDiv);
+    console.log(index);
     if (e.target.classList.contains("yes")) {
-        e.target.classList.remove("yes");
+        e.target.classList.remove("yes");       //Changes color
+        changeReadNo(index);                    //Changes Book.isRead value
     } else {
         e.target.classList.add("yes");
+        changeReadYes(index);
     }
     
+}
+
+// Changes isRead value in Book Objects
+function changeReadNo(index) {
+    for (var i = 0; i < myLibrary.length; i++) { 
+        if (i == index) {
+            myLibrary[i].isRead = "no";
+        }
+    }; 
+}
+
+function changeReadYes(index) {
+    for (var i = 0; i < myLibrary.length; i++) { 
+        if (i == index) {
+            myLibrary[i].isRead = "yes";
+        }
+    }; 
 }
