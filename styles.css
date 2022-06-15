@@ -1,0 +1,79 @@
+:root {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family:'Roboto', sans-serif;
+
+    --darkgrey: rgb(45, 46, 52);
+    --lightgrey: rgb(56, 58, 62);
+    --cornsilk: rgb(203, 205, 224);
+    --lightsilk: rgb(232, 232, 232);
+
+    --gold: rgb(247, 210, 0);
+    --blue: rgb(71, 135, 255);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+
+header {
+    height: 100px;
+    width: 100%;
+    margin: 0;
+    background: var(--darkgrey);
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+}
+
+svg path{
+    fill: var(--cornsilk);
+}
+
+.bookicon{
+    justify-self: right;
+}
+
+.title {
+    color: var(--cornsilk);
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+
+/* Main */
+
+.main {
+    height: 87vh;
+    display: grid;
+    grid-template-rows: 60px 1fr 50px;
+}
+
+.btn-container {
+    background: grey;
+    width: 1fr;
+}
+
+.grid {
+    background: rgb(100, 100, 228);
+    height: 1fr;
+    width: 1fr;
+}
+
+
+
+/* Footer */
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background-color: var(--lightgrey);
+    color: var(--cornsilk);
+  }
