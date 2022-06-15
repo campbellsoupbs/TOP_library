@@ -1,7 +1,8 @@
-:root {
+*, *::after, *::before {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+}
+
+:root {
     font-family:'Roboto', sans-serif;
 
     --darkgrey: rgb(45, 46, 52);
@@ -53,14 +54,25 @@ svg path{
 }
 
 .btn-container {
-    background: grey;
+    background: var(--lightgrey);
     width: 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 .grid {
-    background: rgb(100, 100, 228);
+    background: var(--lightgrey);
     height: 1fr;
     width: 1fr;
+}
+
+.add_book {
+    height: 50px;
+    width: 120px;
+    border-radius: 70px;
+    border-style: none;
+    font-size: 20px;
 }
 
 
@@ -77,3 +89,65 @@ svg path{
     background-color: var(--lightgrey);
     color: var(--cornsilk);
   }
+
+
+  /* Modal */
+
+  .modal {
+    position: fixed;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50px;
+    height: 350px;
+    width: 250px;
+    z-index: 10;
+
+    background: var(--darkgrey);
+    color: var(--cornsilk);
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  #addBookForm {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(6, 20%);
+    gap: 10px;
+    justify-content: center;
+    padding-top: 15px;
+  }
+
+  #addBookForm>h3 {
+    justify-self: center;
+  }
+
+  #addBookForm>input {
+    border-radius: 10px;
+    border-style: none;
+  }
+
+  #addBookForm>button {
+    border-radius: 50px;
+    border-style: none;
+  }
+
+/* Overlay */
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}

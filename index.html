@@ -19,10 +19,11 @@
     </header>
 
     <div class="main">
-        <div class="btn-container"></div>
-        <div class="grid">
-            <div class="test"></div>
+        <div class="btn-container">
+            <button class="add_book">+Add Book</button>
         </div>
+
+        <div class="grid"></div> 
         <div class="footer">
             <p>Copyright © campbellsoupbs</p>
             <div class="git">
@@ -31,6 +32,44 @@
             
         </div>
     </div>
+
+    <div class="modal" id="modal">
+        <form class="add-book-form" id="addBookForm">
+            <h3>Add new book</h3>
+            <input
+            class="input"
+            type="text"
+            id="title"
+            placeholder="Title"
+            required
+            maxlength="100"
+            />
+            <!-- <p class="error-msg" id="errorMsg"></p> -->
+            <input
+            class="input"
+            type="text"
+            id="author"
+            placeholder="Author"
+            required
+            maxlength="100"
+            />
+            <input
+            class="input"
+            type="number"
+            id="pages"
+            placeholder="Pages"
+            required
+            max="10000"
+            />
+            <div class="is-read">
+            <label for="is-read">Have you read it?</label>
+            <input class="checkbox" type="checkbox" id="isRead" />
+            </div>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
         
 
 
