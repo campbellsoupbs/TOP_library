@@ -189,6 +189,7 @@ p {
   #addBookForm>button {
     border-radius: 50px;
     border-style: none;
+    background-color: var(--cornsilk);
   }
 
 /* Overlay */
