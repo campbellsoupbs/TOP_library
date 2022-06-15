@@ -60,11 +60,59 @@ svg path{
     align-items: end;
 }
 
-.grid {
+.grid-container {
     background: var(--lightgrey);
     height: 1fr;
-    width: 1fr;
+    width: 100vw;
 }
+
+.grid {
+    margin:20px;
+    background-color: var(--lightgrey);
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    justify-self: center;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 150px;
+    grid-template-rows:  40px 40px 40px 50px 50px;
+    justify-content: center;
+
+    background-color: var(--darkgrey);
+    color: var(--cornsilk);
+}
+
+.card>p{
+    align-self: end;
+}
+
+.card>button {
+    margin-top: 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.read_btn {
+    background-color: rgb(255, 85, 85);
+}
+
+.read_btn.yes {
+    background-color: rgb(109, 216, 109);
+}
+
+p {
+    margin:0;
+    padding:0;
+}
+
+
+
 
 .add_book {
     height: 50px;
@@ -73,6 +121,7 @@ svg path{
     border-style: none;
     font-size: 20px;
 }
+
 
 
 
