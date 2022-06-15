@@ -114,6 +114,21 @@ function createCard(book){
 
 
     grid.appendChild(div);
+
+    read_btn.addEventListener('click', toggleRead);
 }
 
 
+// Toggle isRead
+
+const read_btn = document.querySelector(".read_btn");
+
+
+function toggleRead(e) {
+    if (e.target.classList.contains("yes")) {
+        e.target.classList.remove("yes");
+    } else {
+        e.target.classList.add("yes");
+    }
+    
+}
