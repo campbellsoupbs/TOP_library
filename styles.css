@@ -23,6 +23,14 @@ html, body{
     grid-template-rows: 100px 60px 1fr 50px;
 }
 
+a>*:hover {
+    transform: scale(1.3);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
 /* Header */
 
 header {
